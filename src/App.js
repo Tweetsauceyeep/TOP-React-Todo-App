@@ -9,13 +9,13 @@ class App extends Component {
 
     this.state = {
       tasksArray: [],
-      tasks: {text: '', id: uniqid()},
+      tasks: {text: '', id: uniqid(), position: 1},
     };
   }
 
   handleChange = e => {
     this.setState({
-      tasks: {text: e.target.value, id: this.state.tasks.id},
+      tasks: {text: e.target.value, id: this.state.tasks.id, position: this.state.tasks.position},
     });
   };
 
@@ -23,9 +23,14 @@ class App extends Component {
     e.preventDefault();
     this.setState({
       tasksArray: this.state.tasksArray.concat(this.state.tasks),
-      tasks: {text: '', id: uniqid()},
+      tasks: {text: '', id: uniqid(), position: this.state.tasks.position + 1},
     });
   };
+
+  handleDelete = e => {
+
+  }
+
 
   render() {
     const {tasks, tasksArray} = this.state;

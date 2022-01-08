@@ -1,20 +1,24 @@
-import React, {Component} from 'react'
-
+import React, {Component} from 'react';
 
 class Overview extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
-  render(){
+  render() {
     return (
       <ul>
-        {this.props.tasksArray.map((item)=>{
-          return (<li key={item.id}>{item.text}</li>)
+        {this.props.tasksArray.map(item => {
+          return (
+            <div key={item.id} style={{display:"flex", justifyContent:'center', }}>
+              <div style={{marginRight:'10px'}}>{`Todo ${item.position}: ${item.text}`}</div>
+              <button>x</button>
+            </div>
+          );
         })}
       </ul>
-    )
+    );
   }
 }
 
-export default Overview
+export default Overview;
