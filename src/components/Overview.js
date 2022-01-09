@@ -12,7 +12,7 @@ class Overview extends Component {
           return (
             <div key={item.id} style={{display:"flex", justifyContent:'center', }}>
               <div style={{marginRight:'10px'}}>{`Todo ${item.position}: ${item.text}`}</div>
-              <button>x</button>
+              <button onClick={this.props.onDelete}>x</button>
             </div>
           );
         })}
